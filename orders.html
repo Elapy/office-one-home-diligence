@@ -1,5 +1,9 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Home Diligence — Orders (Admin)</title><link rel="stylesheet" href="styles.css"></head>
-<body><header><div class="wrap nav"><strong class="logo">🏠 Home Diligence — Orders</strong><nav><a href="index.html">← Back to site</a></nav></div></header>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AbodeVet — Orders (Admin)</title>
+<link rel="icon" type="image/webp" href="abodevet-icon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body><header><div class="wrap nav"><a class="brand" href="index.html"><img src="abodevet-icon.webp" alt="AbodeVet logo"><span>AbodeVet — Orders</span></a><nav><a href="index.html">← Back to site</a></nav></div></header>
 <main class="wrap"><h1>Stored orders</h1><p class="muted">Orders saved in this browser's localStorage (<code>hd_orders</code>). This is a prototype admin view — a production version needs a real backend, auth, and payment processing.</p>
 <button class="btn secondary" onclick="exportJSON()">Export JSON</button> <button class="btn secondary" onclick="if(confirm('Clear all stored orders?')){localStorage.removeItem('hd_orders');render()}">Clear all</button>
 <div id="out" style="margin-top:18px"></div></main>

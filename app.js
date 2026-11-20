@@ -16,7 +16,7 @@ const PARTNERS=[
 ];
 const BUNDLE_PRICE=249;
 const $=s=>document.querySelector(s);
-function card(item,type){return `<div class="card"><label><input type="checkbox" class="item" data-type="${type}" data-id="${item.id}" data-price="${item.price}" data-name="${item.name}"><span><strong>${item.name}</strong><br><span class="muted">${item.desc}</span>${type==='partner'?'<br><em>Coordinated partner service</em>':''}</span><span class="price">$${item.price}</span></label></div>`}
+function card(item,type){return `<div class="card"><label><input type="checkbox" class="item" data-type="${type}" data-id="${item.id}" data-price="${item.price}" data-name="${item.name}"><span class="box" aria-hidden="true">✓</span><span><strong>${item.name}</strong><br><span class="muted">${item.desc}</span>${type==='partner'?'<br><em>Coordinated partner service</em>':''}</span><span class="price">$${item.price}</span></label></div>`}
 $('#research-list').innerHTML=RESEARCH.map(i=>card(i,'research')).join('');
 $('#partner-list').innerHTML=PARTNERS.map(i=>card(i,'partner')).join('');
 function selected(){return [...document.querySelectorAll('.item:checked')].map(el=>({id:el.dataset.id,type:el.dataset.type,name:el.dataset.name,price:+el.dataset.price}))}
@@ -27,7 +27,8 @@ function renderSummary(){let items=selected(); let lines=[];
  else items.filter(i=>i.type==='research').forEach(i=>lines.push(`<div>${i.name} — $${i.price}</div>`));
  items.filter(i=>i.type==='partner').forEach(i=>lines.push(`<div>${i.name} (partner) — $${i.price}</div>`));
  $('#summary-lines').innerHTML=lines.length?lines.join(''):'<span class="muted">Nothing selected yet.</span>';
- $('#total').textContent='$'+total();}
+ $('#total').textContent='$'+total();
+ const ht=$('#hero-total'); if(ht) ht.textContent='$'+total();}
 document.addEventListener('change',renderSummary); renderSummary();
 function genId(){return 'HD-'+Date.now().toString(36).toUpperCase()+'-'+Math.random().toString(36).slice(2,6).toUpperCase()}
 $('#order-form').addEventListener('submit',e=>{e.preventDefault();
