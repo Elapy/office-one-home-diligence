@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home Diligence — Know the home beyond the inspection</title>
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div class="wrap nav"><strong class="logo">🏠 Home Diligence</strong><nav><a href="#checklist">Checklist</a><a href="#partners">Partner checks</a><a href="#order">Order</a><a href="orders.html">Orders</a></nav></div></header>
+<main class="wrap">
+<section class="hero"><h1>Know everything about a home — before you own it.</h1><p>One order. One business coordinating all the research beyond a basic inspection: crime, schools, flood, noise, permits and more. Pick only what you care about — the price adjusts live.</p><a class="btn" href="#order">Start your report</a></section>
+
+<section id="checklist"><h2>1. Pick your research</h2><p class="muted">Every item is a standalone report section, researched from public records and data sources.</p>
+<div id="research-list" class="grid"></div>
+<div class="bundle"><label><input type="checkbox" id="bundle"> <strong>Full Data Report Bundle — $249</strong> <span class="tag">Best value</span><br><span class="muted">All research items above at a discount vs. buying separately.</span></label></div>
+</section>
+
+<section id="partners"><h2>2. Add coordinated partner services</h2><p class="muted">Physical checks are performed by qualified, licensed partner companies in your area. We book them, coordinate access, collect their reports, and include them in your packet. You pay us once — we pay the partner.</p>
+<div id="partner-list" class="grid"></div></section>
+
+<section id="order"><h2>3. Where should we research?</h2>
+<form id="order-form">
+<label>Property address<input required name="address" placeholder="123 Main St, City, ST 00000" autocomplete="street-address"></label>
+<label>Your name<input required name="name" placeholder="Full name"></label>
+<label>Email<input required type="email" name="email" placeholder="you@example.com"></label>
+<label>Target close date<input type="date" name="closeDate"></label>
+<label>Notes (optional)<textarea name="notes" rows="3" placeholder="Anything we should focus on?"></textarea></label>
+<div class="summary"><h3>Order summary</h3><div id="summary-lines"></div><p class="total">Total due: <strong id="total">$0</strong></p><p class="muted small">Payment step added at launch — no card is collected on this prototype. Submitting creates your order record.</p></div>
+<button class="btn" type="submit">Submit order</button>
+<p id="form-error" class="error"></p>
+</form></section>
+
+<section id="confirmation" hidden><h2>✓ Order received</h2><div id="confirmation-body"></div><p><a class="btn" href="orders.html">View stored orders</a> <button class="btn secondary" onclick="location.reload()">Start another order</button></p></section>
+
+<section class="faq"><h2>How it works</h2><ol><li>You pick research + any physical checks.</li><li>We research public records and book partner companies.</li><li>You receive one combined packet before closing.</li></ol></section>
+</main>
+<footer class="wrap muted small"><p>Home Diligence — working prototype. Research is informational and does not replace a licensed inspection, appraisal, survey, or legal advice. Partner services are performed by independent licensed companies.</p></footer>
+<script src="app.js"></script></body></html>
