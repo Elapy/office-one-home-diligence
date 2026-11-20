@@ -1,5 +1,7 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>AbodeVet — Know the home before you own it.</title>
 <meta name="description" content="AbodeVet — home diligence for buyers. We research a home beyond the basic inspection — crime, schools, flood, noise, permits — and coordinate qualified local partners for the physical checks.">
 <link rel="icon" type="image/webp" href="abodevet-icon.webp">
@@ -41,7 +43,7 @@
 <p id="form-error" class="error"></p>
 </form></section>
 
-<section id="confirmation" hidden><h2><span class="ck">✓</span> Order received</h2><div id="confirmation-body"></div><p><a class="btn" href="orders.html">View stored orders</a> <button class="btn secondary" onclick="location.reload()">Start another order</button></p></section>
+<section id="confirmation" hidden><h2><span class="ck">✓</span> Order received</h2><div id="confirmation-body"></div><p><a class="btn" href="orders.html">View stored orders</a> <button class="btn secondary" id="start-another" type="button">Start another order</button></p></section>
 
 <section class="faq" id="how"><h2>How it works</h2><ol><li>You pick research + any physical checks.</li><li>We research public records and book partner companies.</li><li>You receive one combined packet before closing.</li></ol></section>
 </main>

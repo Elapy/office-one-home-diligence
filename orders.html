@@ -1,16 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AbodeVet — Orders (Admin)</title>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>AbodeVet — Orders (Admin)</title>
 <link rel="icon" type="image/webp" href="abodevet-icon.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css"></head>
 <body><header><div class="wrap nav"><a class="brand" href="index.html"><img src="abodevet-icon.webp" alt="AbodeVet logo"><span>AbodeVet — Orders</span></a><nav><a href="index.html">← Back to site</a></nav></div></header>
 <main class="wrap"><h1>Stored orders</h1><p class="muted">Orders saved in this browser's localStorage (<code>hd_orders</code>). This is a prototype admin view — a production version needs a real backend, auth, and payment processing.</p>
-<button class="btn secondary" onclick="exportJSON()">Export JSON</button> <button class="btn secondary" onclick="if(confirm('Clear all stored orders?')){localStorage.removeItem('hd_orders');render()}">Clear all</button>
+<button class="btn secondary" id="export-btn" type="button">Export JSON</button> <button class="btn secondary" id="clear-btn" type="button">Clear all</button>
 <div id="out" style="margin-top:18px"></div></main>
-<script>
-function render(){const orders=JSON.parse(localStorage.getItem('hd_orders')||'[]');
- if(!orders.length){document.getElementById('out').innerHTML='<p>No orders yet. Place one on the main page first.</p>';return;}
- document.getElementById('out').innerHTML='<table><tr><th>Order ID</th><th>Created</th><th>Customer</th><th>Property</th><th>Items</th><th>Total</th><th>Status</th></tr>'+orders.map(o=>`<tr><td>${o.id}</td><td>${o.createdAt}</td><td>${o.name}<br>${o.email}</td><td>${o.address}<br>Close: ${o.closeDate||'—'}</td><td>${(o.bundle?'Bundle<br>':'')+o.items.map(i=>i.name).join('<br>')}</td><td>$${o.total}</td><td>${o.status}</td></tr>`).join('')+'</table>';}
-function exportJSON(){const data=localStorage.getItem('hd_orders')||'[]';const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'application/json'}));a.download='home-diligence-orders.json';a.click();}
-render();
-</script></body></html>
+<script src="orders.js"></script></body></html>

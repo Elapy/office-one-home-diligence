@@ -37,7 +37,7 @@ header{background:#FFFFFF;border-bottom:1px solid var(--line)}
 .bundle label{display:flex;gap:10px;cursor:pointer;align-items:flex-start;position:relative}
 .running{font-size:19px;margin:16px 0 0}
 h2{margin-top:36px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px}
 form label{display:block;margin:12px 0;font-weight:600}
 input,textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px;margin-top:5px;font:inherit;color:#141D5E;background:#FFFFFF}
 .summary{background:#FFFFFF;border:1px solid var(--line);border-radius:12px;padding:16px;margin:18px 0}
@@ -45,6 +45,10 @@ input,textarea{width:100%;padding:11px;border:1px solid var(--line);border-radiu
 .error{color:#10195B;font-weight:600}
 .ck{color:#18888E}
 table{width:100%;border-collapse:collapse;background:#FFFFFF}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-wrap table{min-width:680px}
+td{overflow-wrap:anywhere}
+@media(max-width:640px){.nav{flex-wrap:wrap;gap:6px}.nav nav{display:flex;flex-wrap:wrap}.nav nav a{margin-left:0;padding:10px 8px}.hero h1{font-size:32px}.btn{min-height:44px}}
 th,td{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}
 th{background:#141D5E;color:#FFFFFF;font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
 pre{white-space:pre-wrap}
